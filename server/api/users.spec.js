@@ -1,4 +1,5 @@
 /* global describe beforeEach it */
+//for testing. Mocha & Chai
 
 const {expect} = require('chai')
 const request = require('supertest')
@@ -8,6 +9,7 @@ const User = db.model('user')
 
 describe('User routes', () => {
   beforeEach(() => {
+    //before each test, sync database and start from scratch
     return db.sync({force: true})
   })
 

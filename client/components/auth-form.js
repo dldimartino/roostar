@@ -2,11 +2,12 @@ import React from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {auth} from '../store'
-//test commit
+
 /**
- * COMPONENT
+ * Functional COMPONENT with props
  */
 const AuthForm = props => {
+    //destructuring props
   const {name, displayName, handleSubmit, error} = props
 
   return (
@@ -60,6 +61,7 @@ const mapSignup = state => {
 const mapDispatch = dispatch => {
   return {
     handleSubmit(evt) {
+      //preventDefault prevents page reload
       evt.preventDefault()
       const formName = evt.target.name
       const email = evt.target.email.value
@@ -69,6 +71,8 @@ const mapDispatch = dispatch => {
   }
 }
 
+//two connected components. This module defines two separate connected components (based on login)
+// mapDispatch is shared between both of them (handlesubmit)
 export const Login = connect(mapLogin, mapDispatch)(AuthForm)
 export const Signup = connect(mapSignup, mapDispatch)(AuthForm)
 

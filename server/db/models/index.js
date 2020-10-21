@@ -1,3 +1,5 @@
+//ties all of the models together and acts as a table of contents
+
 const User = require('./user')
 
 /**

@@ -16,6 +16,7 @@ class Routes extends Component {
   render() {
     const {isLoggedIn} = this.props
 
+//switch hits first one to match
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
@@ -27,7 +28,7 @@ class Routes extends Component {
             <Route path="/home" component={UserHome} />
           </Switch>
         )}
-        {/* Displays our Login component as a fallback */}
+        {/* Displays our Login component as a fallback if we don't match any route*/}
         <Route component={Login} />
       </Switch>
     )
@@ -45,6 +46,7 @@ const mapState = state => {
   }
 }
 
+    //doublebang converts truthy/falsy to boolean true or false.
 const mapDispatch = dispatch => {
   return {
     loadInitialData() {
@@ -54,12 +56,15 @@ const mapDispatch = dispatch => {
 }
 
 // The `withRouter` wrapper makes sure that updates are not blocked
-// when the url changes
+// when the url changes. withRouter router passes down router props "match history & location" into props but
+// connected components dont get that prop anymore so you need to use withRouter to give it back.
+// with routes this is the only place you would use withRouter but you do need it here.
 export default withRouter(connect(mapState, mapDispatch)(Routes))
 
 /**
  * PROP TYPES
  */
+ //proptypes is a library that was built into react.
 Routes.propTypes = {
   loadInitialData: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired

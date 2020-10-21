@@ -3,8 +3,13 @@
 import {expect} from 'chai'
 import {me, logout} from './user'
 import axios from 'axios'
+
+//create fake backend
 import MockAdapter from 'axios-mock-adapter'
+
+//create fake versions of redux store with additional testing methods
 import configureMockStore from 'redux-mock-store'
+
 import thunkMiddleware from 'redux-thunk'
 import history from '../history'
 

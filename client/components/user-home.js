@@ -24,6 +24,7 @@ const mapState = state => {
   }
 }
 
+//this component does not need mapDispatchToProps
 export default connect(mapState)(UserHome)
 
 /**

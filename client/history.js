@@ -1,3 +1,5 @@
+//part of react router setup
+
 import {createMemoryHistory, createBrowserHistory} from 'history'
 
 const history =

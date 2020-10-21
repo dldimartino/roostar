@@ -3,6 +3,8 @@
 import {expect} from 'chai'
 import React from 'react'
 import enzyme, {shallow} from 'enzyme'
+
+//needed for enzyme to work with react-16
 import Adapter from 'enzyme-adapter-react-16'
 import {UserHome} from './user-home'
 
@@ -13,6 +15,7 @@ describe('UserHome', () => {
   let userHome
 
   beforeEach(() => {
+        //shallow is an enzyme testing component. allows test running in Node without a DOM
     userHome = shallow(<UserHome email="cody@email.com" />)
   })
 
