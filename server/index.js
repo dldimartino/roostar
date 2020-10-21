@@ -136,7 +136,7 @@ const startListening = () => {
   // start listening (and create a 'server' object representing our server)
   // takes our app and assignes it to a port
   const server = app.listen(PORT, () =>
-    console.log(`Mixing it up on port ${PORT}`)
+    console.log(`----------->>>>>> Mixing it up on port ${PORT}`)
   )
 
   // set up our socket control center
@@ -162,7 +162,7 @@ async function bootApp() {
 if (require.main === module) {
   bootApp()
 } else {
-    // still calls createApp just not listening with syncdb or session store but has object
+  // still calls createApp just not listening with syncdb or session store but has object
   // (for testing purposes)
   createApp()
 }
